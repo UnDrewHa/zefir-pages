@@ -698,11 +698,84 @@
  ======================================*/
 
 (function($){
+  var body = $('body'),
+      timer;
   /* Слайдеры */
   $('[slick-slider]').each(function () {
     var self = $(this), slickConfig = $.parseJSON(self.attr('slick-data'));
     self.slick(slickConfig);
   });
+
+  if ($('.carpet-settings__color').length) {
+    $('.carpet-settings__color label').on('click', function() {
+      var target = $(this);
+      $('.carpet-settings__color label').removeClass('selected');
+      target.addClass('selected');
+      $('.carpet-settings__color-text span').html('' + target.data().color);
+    })
+  }
+
+  body.on('mouseenter', ".main-nav__item", function (e) {
+    var target = $(this);
+
+    if (timer) {
+        clearTimeout(timer);
+        timer = null;
+    }
+    timer = setTimeout(function () {
+      flydown(target);
+      clearTimeout(timer);
+      timer = null;
+    }, 300);
+  });
+
+  body.on('mouseleave', ".flydown", function (e) {
+    clearTimeout(timer);
+    timer = null;
+  });
+  body.on('mouseleave', ".main-nav", function (e) {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+
+    if ($(".flydown").is(":visible") && !$(e.relatedTarget).parents(".flydown").length) {
+      timer = setTimeout(function () {
+        $(".flydown").fadeOut(300);
+        $(".main-nav__item").removeClass("selected");
+        clearTimeout(timer);
+        timer = null;
+      }, 3000);
+    }
+  });
+
+
+  body.on('mouseleave', ".flydown", function (e) {
+        $(".flydown").fadeOut(300);
+        $(".main-nav__item").removeClass("selected");
+  });
+
+  function flydown(target) {
+    $(".main-nav__item").removeClass("selected");
+    target.addClass("selected");
+
+    var index = $(".main-nav__item.selected").index();
+    var childNum = index + 1;
+
+    var leftVal = -1 * 100 * index;
+    var left = leftVal + "%";
+
+    $(".flydown-container").stop().css({
+          left: leftVal + "%",
+          WebkitTransition: 'left 300ms linear',
+          MozTransition: 'left 300ms linear',
+          MsTransition: 'left 300ms linear',
+          OTransition: 'left 300ms linear',
+          transition: 'left 300ms linear'});
+
+    $(".flydown").fadeIn(300);
+  }
+
 
   if ($('.product-colors__slider').hasClass('-slick')) {
     $('.product-colors__slider').slick({
