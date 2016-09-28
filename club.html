@@ -84,7 +84,7 @@
                 <li class="flydown-nav__item line-bottom"><a href="#">Распродажа ковров</a></li>
                 <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
               </ul>
-              <div class="flydown-item__image"><a href="#"><img src="i/flydown_img.jpg" alt=""></a></div>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
             </div>
             <div class="flydown-item">
               <ul class="flydown-nav">
@@ -106,7 +106,7 @@
                 <li class="flydown-nav__item line-bottom"><a href="#">Распродажа ковров</a></li>
                 <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
               </ul>
-              <div class="flydown-item__image"><a href="#"><img src="i/flydown_img.jpg" alt=""></a></div>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
             </div>
             <div class="flydown-item">
               <ul class="flydown-nav">
@@ -128,7 +128,7 @@
                 </li>
                 <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
               </ul>
-              <div class="flydown-item__image"><a href="#"><img src="i/flydown_img.jpg" alt=""></a></div>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
             </div>
             <div class="flydown-item">
               <ul class="flydown-nav">
@@ -150,7 +150,7 @@
                 <li class="flydown-nav__item line-bottom"><a href="#">Распродажа ковров</a></li>
                 <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
               </ul>
-              <div class="flydown-item__image"><a href="#"><img src="i/flydown_img.jpg" alt=""></a></div>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
             </div>
             <div class="flydown-item">
               <ul class="flydown-nav">
@@ -172,7 +172,7 @@
                 <li class="flydown-nav__item line-bottom"><a href="#">Распродажа ковров</a></li>
                 <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
               </ul>
-              <div class="flydown-item__image"><a href="#"><img src="i/flydown_img.jpg" alt=""></a></div>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
             </div>
           </div>
         </div>
@@ -244,10 +244,10 @@
           <label for="style3" class="club-form__label">
             <input type="checkbox" id="style3"><span class="fake-input"></span>ковровая плитка
           </label>
-          <label for="style4" class="club-form__label">
+          <label for="style4" class="club-form__label club-form__show-other">
             <input type="checkbox" id="style4"><span class="fake-input"></span>другое
           </label>
-          <input type="text">
+          <input type="text" class="club-form__other-block">
         </div>
         <div class="club-form__basic">
           <h2>Каким сегментом вы часто занимаетесь:</h2>
@@ -260,10 +260,10 @@
           <label for="style32" class="club-form__label">
             <input type="checkbox" id="style32"><span class="fake-input"></span>формирование офисных пространств
           </label>
-          <label for="style42" class="club-form__label">
+          <label for="style42" class="club-form__label club-form__show-other">
             <input type="checkbox" id="style42"><span class="fake-input"></span>другое
           </label>
-          <input type="text">
+          <input type="text" class="club-form__other-block">
         </div>
         <div class="club-form__basic">
           <h2>Вам интересно:</h2>
@@ -274,10 +274,10 @@
             <input type="checkbox" name="f_party" id="f_party"><span class="fake-input"></span>принимать участие в коктейлях, мастер классах и тематических вечеринках
           </label>
           <hr>
-          <label for="style23" class="club-form__label">
+          <label for="style23" class="club-form__label club-form__show-other">
             <input type="checkbox" id="style23"><span class="fake-input"></span>Я интересуюсь в силу своей профессиональной деятельности
           </label>
-          <div class="club-form__group-inner">
+          <div class="club-form__group-inner club-form__other-block">
             <label for="f_ForTypework" class="club-form__label">
               <input type="checkbox" name="f_ForTypework" id="f_ForTypework"><span class="fake-input"></span>Я частный дизайнер интерьера
             </label>
@@ -299,7 +299,7 @@
         <div class="club-form__protect">
           <p>Защита от автоматических регистраций:</p>
           <div class="club-form__protect-code">
-            <input type="hidden" name="nc_captcha_hash"><img src="i/bg_prot.jpg" name="nc_captcha_img">
+            <input type="hidden" name="nc_captcha_hash"><img src="i/parts/bg_prot.jpg" name="nc_captcha_img">
           </div>
           <input type="text" name="nc_captcha_code">
         </div>
@@ -368,12 +368,94 @@
         </ul>
       </div>
     </div>
-    <p class="footer-rights">© 2011–2015 «ЗЕФИР Ковровая Коллекция»</p>
-    <div class="footer-count"><a href="#"><img src="i/icon_rating.png" alt=""></a></div>
+    <p class="footer-rights">© 2011–2016 «ЗЕФИР Ковровая Коллекция»</p>
+    <div class="footer-count"><a href="#"><img src="i/parts/icon_rating.png" alt=""></a></div>
   </footer>
   <div class="callback">
-    <div class="callback-call"><a href="#"></a></div>
-    <div class="callback-question"><a href="#"></a></div>
+    <div class="callback-call"><a href="#"><span>Обратный звонок</span></a></div>
+    <div class="callback-question"><a href="#"><span>Задать вопрос</span></a></div>
+  </div>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      $('.club-form__show-other').on('click', function() {
+        var input = $(this).find('input');
+        if (input.prop('checked')) {
+          $(this).closest('.club-form__basic').find('.club-form__other-block').addClass('show');
+        } else {
+          $(this).closest('.club-form__basic').find('.club-form__other-block').removeClass('show');
+        }
+      });
+    })();
+  </script>
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-item">
+        <p class="footer-item__title">Поддержка клиентов:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Скачать электронный каталог</a></li>
+          <li><a href="#">Заказать образцы и каталоги</a></li>
+          <li><a href="#">Уход за коврами и  ковровыми<br>покрытиями</a></li>
+          <li><a href="#">Часто задаваемые вопросы</a></li>
+          <li><a href="#">Авторские права и политика<br>конфиденциальности</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">Предоставляемые сервисы:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">Консультации</a></li>
+          <li><a href="#">Выезд специалиста с образцами</a></li>
+          <li><a href="#">Примерка ковров</a></li>
+          <li><a href="#">Замер помещения и расчет<br>покрытия</a></li>
+          <li><a href="#">Установка ковровых покрытий</a></li>
+          <li><a href="#">Доставка ковров и покрытий</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">Стать партнером:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">Для частных дизайнеров,<br>архитекторов и декораторов</a></li>
+          <li><a href="#">Для дизайнерских компаний,<br>архитектурных бюро</a></li>
+          <li><a href="#">Для магазинов ковров и покрытий</a></li>
+          <li><a href="#">Для мебельных магазинов</a></li>
+          <li><a href="#">Для интерьерных компаний</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">ЗЕФИР в мире:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">В журналах</a></li>
+          <li><a href="#">На ТВ</a></li>
+          <li><a href="#">Аккаунт Facebook</a></li>
+          <li><a href="#">Аккаунт HOUZZE</a></li>
+          <li><a href="#">Канал Youtube</a></li>
+          <li><a href="#">Аккаунт LJ</a></li>
+          <li><a href="#">Аккаунт Twitter</a></li>
+          <li><a href="#">Аккаунт "В Контакте"</a></li>
+          <li><a href="#">Аккаунт  Google+</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">О ЗЕФИРЕ:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">История</a></li>
+          <li><a href="#">Миссия</a></li>
+          <li><a href="#">Портфолио</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Вакансии</a></li>
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Карта сайта</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-rights">© 2011–2016 «ЗЕФИР Ковровая Коллекция»</p>
+    <div class="footer-count"><a href="#"><img src="i/parts/icon_rating.png" alt=""></a></div>
+  </footer>
+  <div class="callback">
+    <div class="callback-call"><a href="#"><span>Обратный звонок</span></a></div>
+    <div class="callback-question"><a href="#"><span>Задать вопрос</span></a></div>
   </div>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="js/main.js"></script>

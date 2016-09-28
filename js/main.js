@@ -697,9 +697,9 @@
  END SLICK JS
  ======================================*/
 
-(function($){
+(function ($) {
   var body = $('body'),
-      timer;
+    timer;
   /* Слайдеры */
   $('[slick-slider]').each(function () {
     var self = $(this), slickConfig = $.parseJSON(self.attr('slick-data'));
@@ -707,7 +707,7 @@
   });
 
   if ($('.carpet-settings__color').length) {
-    $('.carpet-settings__color label').on('click', function() {
+    $('.carpet-settings__color label').on('click', function () {
       var target = $(this);
       $('.carpet-settings__color label').removeClass('selected');
       target.addClass('selected');
@@ -719,8 +719,8 @@
     var target = $(this);
 
     if (timer) {
-        clearTimeout(timer);
-        timer = null;
+      clearTimeout(timer);
+      timer = null;
     }
     timer = setTimeout(function () {
       flydown(target);
@@ -738,21 +738,24 @@
       clearTimeout(timer);
       timer = null;
     }
-
-    if ($(".flydown").is(":visible") && !$(e.relatedTarget).parents(".flydown").length) {
-      timer = setTimeout(function () {
+    console.log($(".flydown").is(":visible"));
+    if ($(".flydown").is(":visible") && ($(e.relatedTarget)[0].className != 'flydown')) {
         $(".flydown").fadeOut(300);
         $(".main-nav__item").removeClass("selected");
+        if ($('.top-slider').length) {
+          $('.top-slider img').css('opacity', '1');
+        }
         clearTimeout(timer);
         timer = null;
-      }, 3000);
     }
   });
 
-
   body.on('mouseleave', ".flydown", function (e) {
-        $(".flydown").fadeOut(300);
-        $(".main-nav__item").removeClass("selected");
+    $(".flydown").fadeOut(300);
+    $(".main-nav__item").removeClass("selected");
+    if ($('.top-slider').length) {
+      $('.top-slider img').css('opacity', '1');
+    }
   });
 
   function flydown(target) {
@@ -766,16 +769,20 @@
     var left = leftVal + "%";
 
     $(".flydown-container").stop().css({
-          left: leftVal + "%",
-          WebkitTransition: 'left 300ms linear',
-          MozTransition: 'left 300ms linear',
-          MsTransition: 'left 300ms linear',
-          OTransition: 'left 300ms linear',
-          transition: 'left 300ms linear'});
-
+      left: leftVal + "%",
+      WebkitTransition: 'left 300ms linear',
+      MozTransition: 'left 300ms linear',
+      MsTransition: 'left 300ms linear',
+      OTransition: 'left 300ms linear',
+      transition: 'left 300ms linear'
+    });
+    if ($('.top-slider').length) {
+      $('.top-slider img').css('opacity', '.4');
+    }
     $(".flydown").fadeIn(300);
   }
-
+  
+  
 
   if ($('.product-colors__slider').hasClass('-slick')) {
     $('.product-colors__slider').slick({
@@ -808,53 +815,20 @@
     });
   }
 
-  $('.carousel__prev').click(function () {
-    $(this).closest('.carousel-container').find('.carousel-wrap').slick('slickPrev');
-  });
 
-  $('.carousel__next').click(function () {
-    $(this).closest('.carousel-container').find('.carousel-wrap').slick('slickNext');
-  });
-
-  if ($('.collection-slider__wrap').hasClass('-slick')) {
-    $('.collection-slider__wrap').slick({
-      dots: true,
-      arrows: false,
-      infinite: true,
-      speed: 500,
-      autoplay: true,
-      fade: true,
-      cssEase: 'linear'
+  if ($('.category-slider__container').length) {
+    $('.slick-slider').on('click', '.slick-slide', function (e) {
+      if ($(this).hasClass('slick-current')) {
+        return;
+      }
+      var index = $(this).data("slick-index");
+      if ($('.slick-slider').slick('slickCurrentSlide') !== index) {
+        $('.slick-slider').slick('slickGoTo', index);
+      }
+      return false;
     });
   }
 
-  if ($('.top-slider__container').hasClass('-slick')) {
-    $('.top-slider__container').slick({
-      dots: false,
-      infinite: true,
-      speed: 500,
-      autoplay: true,
-      fade: true,
-      cssEase: 'linear',
-      prevArrow: $('.top-slider__prev'),
-      nextArrow: $('.top-slider__next')
-    });
-  }
-
-
-
-  if ($('.category-slider__container').hasClass('-slick')) {
-    $('.category-slider__container').slick({
-      dots: false,
-      prevArrow: $ ('.category-slider__prev'),
-      nextArrow: $ ('.category-slider__next'),
-      slidesToShow: 3,
-      centerMode: true,
-      centerPadding: '',
-      variableWidth: true,
-      adaptiveHeight: true
-    });
-  }
-
+  
 
 })(jQuery);
