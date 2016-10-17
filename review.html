@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Zefir</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+</html>
+<body>
+  <div id="modal-question" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close"></div>
+      <div class="modal__header">Задать вопрос</div>
+      <form name="mail_adminForm" method="post" action="/netcat/add.php" onsubmit="_gaq.push(['_trackEvent', 'Форма Отправка письма', 'Отправили данные по форме']);" novalidate="novalidate" class="feedback-form">
+        <input name="cc" type="hidden" value="196">
+        <input name="sub" type="hidden" value="167">
+        <input name="catalogue" type="hidden" value="1">
+        <input type="hidden" name="posting" value="1">
+        <input id="f_Subject" name="f_QSubject" type="hidden" value="Сервисы">
+        <div class="feedback-form__group">
+          <label for="f_QName">Представьтесь, пожалуйста <span>*</span></label>
+          <input type="text" name="f_QName" id="f_QName">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_QPhone">Контактный телефон <span>*</span></label>
+          <input type="text" name="f_QPhone" id="f_QPhone">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_QEmail">E-mail <span>*</span></label>
+          <input type="text" name="f_QEmail" id="f_QEmail">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_QText">Ваш вопрос</label>
+          <textarea id="f_QText" name="f_QText"></textarea>
+        </div>
+        <div class="feedback-form__group">
+          <label for="nc_captcha_code_q">Введите символы <span>*</span></label>
+          <div>
+            <input type="hidden" name="nc_captcha_hash" value=""><img name="nc_captcha_img" src="i/parts/bg_prot.jpg">
+            <input id="nc_captcha_code_q" type="text" name="nc_captcha_code_q" size="10">
+          </div>
+        </div>
+        <div class="feedback__notify"><span>*</span> поля являются обязательными для заполнения</div>
+        <button type="submit" class="feedback__submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+  <div id="modal-call" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close"></div>
+      <div class="modal__header">Обратный звонок</div>
+      <form name="mail_adminForm" method="post" action="/netcat/add.php" onsubmit="_gaq.push(['_trackEvent', 'Форма Отправка письма', 'Отправили данные по форме']);" novalidate="novalidate" class="feedback-form">
+        <input name="cc" type="hidden" value="196">
+        <input name="sub" type="hidden" value="167">
+        <input name="catalogue" type="hidden" value="1">
+        <input type="hidden" name="posting" value="1">
+        <input id="f_CallSubject" name="f_CallSubject" type="hidden" value="Сервисы">
+        <div class="feedback-form__group">
+          <label for="f_CallName">Представьтесь, пожалуйста <span>*</span></label>
+          <input type="text" name="f_CallName" id="f_CallName">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallPhone">Контактный телефон <span>*</span></label>
+          <input type="text" name="f_CallPhone" id="f_CallPhone">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallTime">удобное время для звонка</label>
+          <input type="text" name="f_CallTime" id="f_CallTime">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallText">Ваш вопрос</label>
+          <textarea id="f_CallText" name="f_CallText"></textarea>
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallComment">комментарий</label>
+          <textarea id="f_CallComment" name="f_CallComment"></textarea>
+        </div>
+        <div class="feedback-form__group">
+          <label for="nc_captcha_code_call">Введите символы <span>*</span></label>
+          <div>
+            <input type="hidden" name="nc_captcha_hash" value=""><img name="nc_captcha_img" src="i/parts/bg_prot.jpg">
+            <input id="nc_captcha_code_call" type="text" name="nc_captcha_code_call" size="10" class="captcha-input">
+          </div>
+        </div>
+        <div class="feedback__notify"><span>*</span> поля являются обязательными для заполнения</div>
+        <button type="submit" class="feedback__submit">Перезвоните мне</button>
+      </form>
+    </div>
+  </div>
+  <div id="nav">
+  <ul>
+  <li><a href="./">главная</a></li>
+  <li><a href="./club.html">клуб</a></li>
+  <li><a href="./news.html">новости</a></li>
+  <li><a href="./product.html">продуктовка</a></li>
+  <li><a href="./product_color.html">продуктовка с цветами</a></li>
+  <li><a href="./category_grid.html">категории сетка</a></li>
+  <li><a href="./category_slider.html">категории слайдер</a></li>
+  <li><a href="./manufacturer.html">мировые бренды</a></li>
+  <li><a href="./search.html">поиск</a></li>
+  <li><a href="./services.html">услуги</a></li>
+  <li><a href="./shops.html">шоу-румы</a></li>
+  <li><a href="./review.html">превью</a></li>
+  </ul>
+  </div>
+  <header class="line">
+    <div class="top-banner">
+      <div class="top-banner__inner">
+        <ul class="basic-list">
+          <li class="basic-list__item -home"><a href="#"></a></li>
+          <li class="basic-list__item -mail"><a href="#"></a></li>
+          <li class="basic-list__item -map"><a href="#"></a></li>
+        </ul>
+        <ul class="top-nav">
+          <li class="top-nav__item"><a href="#">КОНТАКТЫ</a></li>
+          <li class="top-nav__item"><a href="#">О ЗЕФИРЕ</a></li>
+          <li class="top-nav__item"><a href="#">ДОСТАВКА И ПРИМЕРКА</a></li>
+          <li class="top-nav__item"><a href="#">ОПЛАТА</a></li>
+          <li class="top-nav__item"><a href="#">ДИЗАЙНЕРАМ</a></li>
+        </ul>
+        <ul class="social-list">
+          <li class="social-list__item -fb"><a href="#"></a></li>
+          <li class="social-list__item -vk"><a href="#"></a></li>
+          <li class="social-list__item -tw"><a href="#"></a></li>
+          <li class="social-list__item -lj"><a href="#"></a></li>
+          <li class="social-list__item -yt"><a href="#"></a></li>
+          <li class="social-list__item -houzz"><a href="#"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="header__inner">
+      <div class="contact-info"><a href="#" class="contact-info__phone">+7 (495) 266 46 25</a><a href="#" class="contact-info__mail">info@zefir.ru</a></div>
+      <div class="logo"><a href="#"></a></div>
+      <div class="addition-info"><a href="#" class="addition-info__down">скачать электронный каталог</a><a href="#" class="addition-info__club">Вступить в дизайн-клуб</a></div>
+      <nav>
+        <ul class="main-nav">
+          <li class="main-nav__item"><a href="#">Дизайнерские ковры</a></li>
+          <li class="main-nav__item"><a href="#">Ковровые покрытия</a></li>
+          <li class="main-nav__item"><a href="#">есть в наличии</a></li>
+          <li class="main-nav__item"><a href="#">Шоу-рум</a></li>
+          <li class="main-nav__item"><a href="#">Сервисы</a></li>
+        </ul>
+        <form class="search-block">
+          <input type="text" class="search-block__input">
+          <button type="submit" class="search-block__submit"></button>
+        </form>
+        <div class="flydown">
+          <div class="flydown-container">
+            <div class="flydown-item">
+              <ul class="flydown-nav">
+                <li class="flydown-nav__item line-bottom"><a href="#">Ожидаемые коллекции 2017</a></li>
+                <li class="flydown-nav__item"><a href="#">Все готовые ковры</a>
+                  <ul class="flydown-secNav">
+                    <li class="flydown-secNav__item"><a href="#">Победители  International Carpet Design Awards</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Авангардный современный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Геометрический дизайн и модерн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Винтажный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Классический дизайн</a></li>
+                  </ul>
+                </li>
+                <li class="flydown-nav__item"><a href="#">Авторские ковры ручной работы – c шелком и шерстью</a></li>
+                <li class="flydown-nav__item"><a href="#">Эко – ковры из растительных материалов</a></li>
+                <li class="flydown-nav__item"><a href="#">Ковры с длинным ворсом</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Ковры из инновационных материалов</a></li>
+                <li class="flydown-nav__item"><a href="#">Ковры в наличии</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Распродажа ковров</a></li>
+                <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
+              </ul>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
+            </div>
+            <div class="flydown-item">
+              <ul class="flydown-nav">
+                <li class="flydown-nav__item line-bottom"><a href="#">Ожидаемые коллекции 2017</a></li>
+                <li class="flydown-nav__item"><a href="#">Все готовые ковры</a></li>
+                <li class="flydown-nav__item"><a href="#">Авторские ковры ручной работы – c шелком и шерстью</a></li>
+                <li class="flydown-nav__item"><a href="#">Эко – ковры из растительных материалов</a>
+                  <ul class="flydown-secNav">
+                    <li class="flydown-secNav__item"><a href="#">Победители  International Carpet Design Awards</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Авангардный современный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Геометрический дизайн и модерн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Винтажный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Классический дизайн</a></li>
+                  </ul>
+                </li>
+                <li class="flydown-nav__item"><a href="#">Ковры с длинным ворсом</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Ковры из инновационных материалов</a></li>
+                <li class="flydown-nav__item"><a href="#">Ковры в наличии</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Распродажа ковров</a></li>
+                <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
+              </ul>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
+            </div>
+            <div class="flydown-item">
+              <ul class="flydown-nav">
+                <li class="flydown-nav__item line-bottom"><a href="#">Ожидаемые коллекции 2017</a></li>
+                <li class="flydown-nav__item"><a href="#">Все готовые ковры</a></li>
+                <li class="flydown-nav__item"><a href="#">Авторские ковры ручной работы – c шелком и шерстью</a></li>
+                <li class="flydown-nav__item"><a href="#">Эко – ковры из растительных материалов</a></li>
+                <li class="flydown-nav__item"><a href="#">Ковры с длинным ворсом</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Ковры из инновационных материалов</a></li>
+                <li class="flydown-nav__item"><a href="#">Ковры в наличии</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Распродажа ковров</a>
+                  <ul class="flydown-secNav">
+                    <li class="flydown-secNav__item"><a href="#">Победители  International Carpet Design Awards</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Авангардный современный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Геометрический дизайн и модерн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Винтажный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Классический дизайн</a></li>
+                  </ul>
+                </li>
+                <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
+              </ul>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
+            </div>
+            <div class="flydown-item">
+              <ul class="flydown-nav">
+                <li class="flydown-nav__item line-bottom"><a href="#">Ожидаемые коллекции 2017</a>
+                  <ul class="flydown-secNav">
+                    <li class="flydown-secNav__item"><a href="#">Победители  International Carpet Design Awards</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Авангардный современный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Геометрический дизайн и модерн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Винтажный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Классический дизайн</a></li>
+                  </ul>
+                </li>
+                <li class="flydown-nav__item"><a href="#">Все готовые ковры</a></li>
+                <li class="flydown-nav__item"><a href="#">Авторские ковры ручной работы – c шелком и шерстью</a></li>
+                <li class="flydown-nav__item"><a href="#">Эко – ковры из растительных материалов</a></li>
+                <li class="flydown-nav__item"><a href="#">Ковры с длинным ворсом</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Ковры из инновационных материалов</a></li>
+                <li class="flydown-nav__item"><a href="#">Ковры в наличии</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Распродажа ковров</a></li>
+                <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
+              </ul>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
+            </div>
+            <div class="flydown-item">
+              <ul class="flydown-nav">
+                <li class="flydown-nav__item line-bottom"><a href="#">Ожидаемые коллекции 2017</a></li>
+                <li class="flydown-nav__item"><a href="#">Все готовые ковры</a></li>
+                <li class="flydown-nav__item"><a href="#">Авторские ковры ручной работы – c шелком и шерстью</a>
+                  <ul class="flydown-secNav">
+                    <li class="flydown-secNav__item"><a href="#">Победители  International Carpet Design Awards</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Авангардный современный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Геометрический дизайн и модерн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Винтажный дизайн</a></li>
+                    <li class="flydown-secNav__item"><a href="#">Классический дизайн</a></li>
+                  </ul>
+                </li>
+                <li class="flydown-nav__item"><a href="#">Эко – ковры из растительных материалов</a></li>
+                <li class="flydown-nav__item"><a href="#">Ковры с длинным ворсом</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Ковры из инновационных материалов</a></li>
+                <li class="flydown-nav__item"><a href="#">Ковры в наличии</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Распродажа ковров</a></li>
+                <li class="flydown-nav__item"><a href="#">Изготовление ковров по индивидуальному проекту</a></li>
+              </ul>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content">
+    <header class="page-header">
+      <p class="breadcrumbs"><a href="#">Главная</a></p>
+      <h1 class="page-title">10 лучших современных ковров десятилетия по версии журнала «Cover»</h1>
+      <div class="preview-desc">
+        <p><i>Люси Апвард - автор Британского журнала «Cover» - одного из самых уважаемых в мире изданий в отрасли мягкого пола, задал вопрос десяти различным международным компаниям, торгующим коврами. И этот вопрос звучал так: «Какой из ваших ковров стал лучшим ковром десятилетия?» Некоторые ковры стали хитом продаж в той или иной компании, другие положили начало важному тренду или послужили определенной вехой в развитии ковровой индустрии в последние десять лет. Итак, перед вами – окончательная подборка. Мы указали название ковра, имя человека, выбравшего тот или иной ковер, и процитировали несколько слов в обоснование такого выбора. Можно по-разному относиться к подобным подборкам, но следует помнить, что именно эти ковры олицетворяют сущность рынка, на котором мы работаем.</i></p>
+        <p class="preview-desc__title"><a href="#">№01. Ковер коллекции «Soho», дизайн и исполнение - компания «Wool and Silk Rugs»</a></p>
+        <p><i>Комментарий Резы Аштари, Ashtari Carpets</i></p>
+        <p>«Этот ковер, создан величайшим дизайнером современности Эрбилем Тезканом, основателем компании «Wool and Silk Rugs». Эрбиль Тезкан создает сотканные вручную ковры великолепного качества, с отделкой на высшем уровне. Его ковры обращаются к воображению и помогают создать атмосферу безмятежности. Это элегантность вне времени, которая сочетается с классическими и современными стилями в интерьере».</p><img src="i/parts/preview_1.jpg" alt="">
+        <p class="preview-desc__title"><a href="#">№02. Ковер коллекции «Caprice», дизайн и исполнение - компания «Amici Imports»</a></p>
+        <p><i>Комментарий Майкла Пурвакил, Weavers Art</i></p>
+        <p>«Это прекрасный пример ковра, который задал направление в дизайне в прошедшем десятилетии. Дело в том, что Caprice сочетается буквально со всем. Изысканный мотив такого дизайна популярен во все времена, а выбор цветов – роскошный, но неброский».</p><img src="i/parts/preview_2.jpg" alt="">
+        <div class="sharing-list">
+          <li class="fb"><a href="#"></a></li>
+          <li class="vk"><a href="#"></a></li>
+          <li class="tw"><a href="#"></a></li>
+          <li class="hz"><a href="#"></a></li>
+        </div>
+      </div>
+    </header>
+  </main>
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-item">
+        <p class="footer-item__title">Поддержка клиентов:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Скачать электронный каталог</a></li>
+          <li><a href="#">Заказать образцы и каталоги</a></li>
+          <li><a href="#">Уход за коврами и  ковровыми<br>покрытиями</a></li>
+          <li><a href="#">Часто задаваемые вопросы</a></li>
+          <li><a href="#">Авторские права и политика<br>конфиденциальности</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">Предоставляемые сервисы:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">Консультации</a></li>
+          <li><a href="#">Выезд специалиста с образцами</a></li>
+          <li><a href="#">Примерка ковров</a></li>
+          <li><a href="#">Замер помещения и расчет<br>покрытия</a></li>
+          <li><a href="#">Установка ковровых покрытий</a></li>
+          <li><a href="#">Доставка ковров и покрытий</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">Стать партнером:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">Для частных дизайнеров,<br>архитекторов и декораторов</a></li>
+          <li><a href="#">Для дизайнерских компаний,<br>архитектурных бюро</a></li>
+          <li><a href="#">Для магазинов ковров и покрытий</a></li>
+          <li><a href="#">Для мебельных магазинов</a></li>
+          <li><a href="#">Для интерьерных компаний</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">ЗЕФИР в мире:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">В журналах</a></li>
+          <li><a href="#">На ТВ</a></li>
+          <li><a href="#">Аккаунт Facebook</a></li>
+          <li><a href="#">Аккаунт HOUZZE</a></li>
+          <li><a href="#">Канал Youtube</a></li>
+          <li><a href="#">Аккаунт LJ</a></li>
+          <li><a href="#">Аккаунт Twitter</a></li>
+          <li><a href="#">Аккаунт "В Контакте"</a></li>
+          <li><a href="#">Аккаунт  Google+</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">О ЗЕФИРЕ:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">История</a></li>
+          <li><a href="#">Миссия</a></li>
+          <li><a href="#">Портфолио</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Вакансии</a></li>
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Карта сайта</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-rights">© 2011–2016 «ЗЕФИР Ковровая Коллекция»</p>
+    <div class="footer-count"><a href="#"><img src="i/parts/icon_rating.png" alt=""></a></div>
+  </footer>
+  <div class="callback">
+    <div class="callback-call"><a href="#modal-call" data-modal="call"><span>Обратный звонок</span></a></div>
+    <div class="callback-question"><a href="#modal-question" data-modal="question"><span>Задать вопрос</span></a></div>
+  </div>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
