@@ -700,6 +700,43 @@
 (function ($) {
   var body = $('body'),
     timer;
+
+  /* Модальные окна */
+  body.on("click", "[data-modal]", function(e) {
+    e.preventDefault();
+    var scrollBarWidth = window.innerWidth - document.body.offsetWidth,
+        modalTarget = $("#modal-" + $(this).data().modal),
+        windowHeight = $(window).height(),
+        modalHeight = modalTarget.find(".modal__inner").outerHeight();
+
+    if (modalTarget.hasClass("shown")) {
+      return;
+    }
+
+    if (windowHeight <= modalHeight) {
+      modalTarget.find(".modal__inner").css({
+        "top": 0,
+        "transform": "none",
+        "margin": "50px auto"
+      });
+    }
+
+
+    body.css({
+      "overflow": "hidden",
+      "margin-right": scrollBarWidth + "px"
+    });
+    modalTarget.addClass("shown");
+    
+  }); 
+  body.on("click", ".modal__close", function() {
+    $(this).closest(".modal").removeClass("shown");
+    body.css({
+      "overflow": "auto",
+      "margin-right": 0
+    });
+  });
+
   /* Слайдеры */
   $('[slick-slider]').each(function () {
     var self = $(this), slickConfig = $.parseJSON(self.attr('slick-data'));

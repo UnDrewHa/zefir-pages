@@ -10,6 +10,86 @@
   </head>
 </html>
 <body>
+  <div id="modal-question" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close"></div>
+      <div class="modal__header">Задать вопрос</div>
+      <form name="mail_adminForm" method="post" action="/netcat/add.php" onsubmit="_gaq.push(['_trackEvent', 'Форма Отправка письма', 'Отправили данные по форме']);" novalidate="novalidate" class="feedback-form">
+        <input name="cc" type="hidden" value="196">
+        <input name="sub" type="hidden" value="167">
+        <input name="catalogue" type="hidden" value="1">
+        <input type="hidden" name="posting" value="1">
+        <input id="f_Subject" name="f_QSubject" type="hidden" value="Сервисы">
+        <div class="feedback-form__group">
+          <label for="f_QName">Представьтесь, пожалуйста <span>*</span></label>
+          <input type="text" name="f_QName" id="f_QName">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_QPhone">Контактный телефон <span>*</span></label>
+          <input type="text" name="f_QPhone" id="f_QPhone">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_QEmail">E-mail <span>*</span></label>
+          <input type="text" name="f_QEmail" id="f_QEmail">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_QText">Ваш вопрос</label>
+          <textarea id="f_QText" name="f_QText"></textarea>
+        </div>
+        <div class="feedback-form__group">
+          <label for="nc_captcha_code_q">Введите символы <span>*</span></label>
+          <div>
+            <input type="hidden" name="nc_captcha_hash" value=""><img name="nc_captcha_img" src="i/parts/bg_prot.jpg">
+            <input id="nc_captcha_code_q" type="text" name="nc_captcha_code_q" size="10">
+          </div>
+        </div>
+        <div class="feedback__notify"><span>*</span> поля являются обязательными для заполнения</div>
+        <button type="submit" class="feedback__submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+  <div id="modal-call" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close"></div>
+      <div class="modal__header">Обратный звонок</div>
+      <form name="mail_adminForm" method="post" action="/netcat/add.php" onsubmit="_gaq.push(['_trackEvent', 'Форма Отправка письма', 'Отправили данные по форме']);" novalidate="novalidate" class="feedback-form">
+        <input name="cc" type="hidden" value="196">
+        <input name="sub" type="hidden" value="167">
+        <input name="catalogue" type="hidden" value="1">
+        <input type="hidden" name="posting" value="1">
+        <input id="f_CallSubject" name="f_CallSubject" type="hidden" value="Сервисы">
+        <div class="feedback-form__group">
+          <label for="f_CallName">Представьтесь, пожалуйста <span>*</span></label>
+          <input type="text" name="f_CallName" id="f_CallName">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallPhone">Контактный телефон <span>*</span></label>
+          <input type="text" name="f_CallPhone" id="f_CallPhone">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallTime">удобное время для звонка</label>
+          <input type="text" name="f_CallTime" id="f_CallTime">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallText">Ваш вопрос</label>
+          <textarea id="f_CallText" name="f_CallText"></textarea>
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallComment">комментарий</label>
+          <textarea id="f_CallComment" name="f_CallComment"></textarea>
+        </div>
+        <div class="feedback-form__group">
+          <label for="nc_captcha_code_call">Введите символы <span>*</span></label>
+          <div>
+            <input type="hidden" name="nc_captcha_hash" value=""><img name="nc_captcha_img" src="i/parts/bg_prot.jpg">
+            <input id="nc_captcha_code_call" type="text" name="nc_captcha_code_call" size="10" class="captcha-input">
+          </div>
+        </div>
+        <div class="feedback__notify"><span>*</span> поля являются обязательными для заполнения</div>
+        <button type="submit" class="feedback__submit">Перезвоните мне</button>
+      </form>
+    </div>
+  </div>
   <div id="nav">
   <ul>
   <li><a href="./">главная</a></li>
@@ -23,6 +103,7 @@
   <li><a href="./search.html">поиск</a></li>
   <li><a href="./services.html">услуги</a></li>
   <li><a href="./shops.html">шоу-румы</a></li>
+  <li><a href="./review.html">превью</a></li>
   </ul>
   </div>
   <header class="line">
@@ -183,156 +264,156 @@
       </nav>
     </div>
   </header>
+  <main class="main-content news-box">
+    <header class="page-header">
+      <p class="breadcrumbs"><a href="#">Главная</a></p>
+      <h1 class="page-title">новости</h1>
+    </header>
+    <div class="news-wrap">
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_3.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_5.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_7.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_12.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_13.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_14.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_3.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_5.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_7.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_12.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_13.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+      <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_14.jpg" alt="" class="news__img"></a>
+        <div class="news__date">19.05.2016</div>
+        <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
+        <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
+      </div>
+    </div>
+    <ul class="pagination">
+      <li class="pagination__item passive"><a href="#">предыдущая</a></li>
+      <li class="pagination__item passive"><a href="#">1</a></li>
+      <li class="pagination__item"><a href="#">2</a></li>
+      <li class="pagination__item"><a href="#">3</a></li>
+      <li class="pagination__item"><a href="#">4</a></li>
+      <li class="pagination__item"><a href="#">5</a></li>
+      <li class="pagination__item"><a href="#">6</a></li>
+      <li class="pagination__item"><a href="#">7</a></li>
+      <li class="pagination__item"><a href="#">8</a></li>
+      <li class="pagination__item"><a href="#">9</a></li>
+      <li class="pagination__item"><a href="#">10</a></li>
+      <li class="pagination__item"><a href="#">следующая</a></li>
+    </ul>
+  </main>
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-item">
+        <p class="footer-item__title">Поддержка клиентов:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Скачать электронный каталог</a></li>
+          <li><a href="#">Заказать образцы и каталоги</a></li>
+          <li><a href="#">Уход за коврами и  ковровыми<br>покрытиями</a></li>
+          <li><a href="#">Часто задаваемые вопросы</a></li>
+          <li><a href="#">Авторские права и политика<br>конфиденциальности</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">Предоставляемые сервисы:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">Консультации</a></li>
+          <li><a href="#">Выезд специалиста с образцами</a></li>
+          <li><a href="#">Примерка ковров</a></li>
+          <li><a href="#">Замер помещения и расчет<br>покрытия</a></li>
+          <li><a href="#">Установка ковровых покрытий</a></li>
+          <li><a href="#">Доставка ковров и покрытий</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">Стать партнером:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">Для частных дизайнеров,<br>архитекторов и декораторов</a></li>
+          <li><a href="#">Для дизайнерских компаний,<br>архитектурных бюро</a></li>
+          <li><a href="#">Для магазинов ковров и покрытий</a></li>
+          <li><a href="#">Для мебельных магазинов</a></li>
+          <li><a href="#">Для интерьерных компаний</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">ЗЕФИР в мире:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">В журналах</a></li>
+          <li><a href="#">На ТВ</a></li>
+          <li><a href="#">Аккаунт Facebook</a></li>
+          <li><a href="#">Аккаунт HOUZZE</a></li>
+          <li><a href="#">Канал Youtube</a></li>
+          <li><a href="#">Аккаунт LJ</a></li>
+          <li><a href="#">Аккаунт Twitter</a></li>
+          <li><a href="#">Аккаунт "В Контакте"</a></li>
+          <li><a href="#">Аккаунт  Google+</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <p class="footer-item__title">О ЗЕФИРЕ:</p>
+        <ul class="footer-item__list">
+          <li><a href="#">История</a></li>
+          <li><a href="#">Миссия</a></li>
+          <li><a href="#">Портфолио</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Вакансии</a></li>
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Карта сайта</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-rights">© 2011–2016 «ЗЕФИР Ковровая Коллекция»</p>
+    <div class="footer-count"><a href="#"><img src="i/parts/icon_rating.png" alt=""></a></div>
+  </footer>
+  <div class="callback">
+    <div class="callback-call"><a href="#modal-call" data-modal="call"><span>Обратный звонок</span></a></div>
+    <div class="callback-question"><a href="#modal-question" data-modal="question"><span>Задать вопрос</span></a></div>
+  </div>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
-<main class="main-content news-box">
-  <header class="page-header">
-    <p class="breadcrumbs"><a href="#">Главная</a></p>
-    <h1 class="page-title">новости</h1>
-  </header>
-  <div class="news-wrap">
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_3.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_5.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_7.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_12.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_13.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_14.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_3.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_5.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_7.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_12.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_13.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-    <div class="news__item"><a href="#" target="_blank"><img src="i/parts/news_14.jpg" alt="" class="news__img"></a>
-      <div class="news__date">19.05.2016</div>
-      <p class="news__title"><a href="#" target="_blank">«Идеальный ремонт» для семьи Екатерины и Александра Стриженовых – меняем стереотипы!</a></p>
-      <p class="news__desc">Известная телеведущая и актриса Екатерина Стриженова попросила дизайнера Наташу Барбье и команду программы «Идеальный ремонт» сделать ремонт для своей мамы - Валентины Яковлевны.</p>
-    </div>
-  </div>
-  <ul class="pagination">
-    <li class="pagination__item passive"><a href="#">предыдущая</a></li>
-    <li class="pagination__item passive"><a href="#">1</a></li>
-    <li class="pagination__item"><a href="#">2</a></li>
-    <li class="pagination__item"><a href="#">3</a></li>
-    <li class="pagination__item"><a href="#">4</a></li>
-    <li class="pagination__item"><a href="#">5</a></li>
-    <li class="pagination__item"><a href="#">6</a></li>
-    <li class="pagination__item"><a href="#">7</a></li>
-    <li class="pagination__item"><a href="#">8</a></li>
-    <li class="pagination__item"><a href="#">9</a></li>
-    <li class="pagination__item"><a href="#">10</a></li>
-    <li class="pagination__item"><a href="#">следующая</a></li>
-  </ul>
-</main>
-<footer>
-  <div class="footer-wrap">
-    <div class="footer-item">
-      <p class="footer-item__title">Поддержка клиентов:</p>
-      <ul class="footer-item__list">
-        <li><a href="#">Контакты</a></li>
-        <li><a href="#">Скачать электронный каталог</a></li>
-        <li><a href="#">Заказать образцы и каталоги</a></li>
-        <li><a href="#">Уход за коврами и  ковровыми<br>покрытиями</a></li>
-        <li><a href="#">Часто задаваемые вопросы</a></li>
-        <li><a href="#">Авторские права и политика<br>конфиденциальности</a></li>
-      </ul>
-    </div>
-    <div class="footer-item">
-      <p class="footer-item__title">Предоставляемые сервисы:</p>
-      <ul class="footer-item__list">
-        <li><a href="#">Консультации</a></li>
-        <li><a href="#">Выезд специалиста с образцами</a></li>
-        <li><a href="#">Примерка ковров</a></li>
-        <li><a href="#">Замер помещения и расчет<br>покрытия</a></li>
-        <li><a href="#">Установка ковровых покрытий</a></li>
-        <li><a href="#">Доставка ковров и покрытий</a></li>
-      </ul>
-    </div>
-    <div class="footer-item">
-      <p class="footer-item__title">Стать партнером:</p>
-      <ul class="footer-item__list">
-        <li><a href="#">Для частных дизайнеров,<br>архитекторов и декораторов</a></li>
-        <li><a href="#">Для дизайнерских компаний,<br>архитектурных бюро</a></li>
-        <li><a href="#">Для магазинов ковров и покрытий</a></li>
-        <li><a href="#">Для мебельных магазинов</a></li>
-        <li><a href="#">Для интерьерных компаний</a></li>
-      </ul>
-    </div>
-    <div class="footer-item">
-      <p class="footer-item__title">ЗЕФИР в мире:</p>
-      <ul class="footer-item__list">
-        <li><a href="#">В журналах</a></li>
-        <li><a href="#">На ТВ</a></li>
-        <li><a href="#">Аккаунт Facebook</a></li>
-        <li><a href="#">Аккаунт HOUZZE</a></li>
-        <li><a href="#">Канал Youtube</a></li>
-        <li><a href="#">Аккаунт LJ</a></li>
-        <li><a href="#">Аккаунт Twitter</a></li>
-        <li><a href="#">Аккаунт "В Контакте"</a></li>
-        <li><a href="#">Аккаунт  Google+</a></li>
-      </ul>
-    </div>
-    <div class="footer-item">
-      <p class="footer-item__title">О ЗЕФИРЕ:</p>
-      <ul class="footer-item__list">
-        <li><a href="#">История</a></li>
-        <li><a href="#">Миссия</a></li>
-        <li><a href="#">Портфолио</a></li>
-        <li><a href="#">Отзывы</a></li>
-        <li><a href="#">Вакансии</a></li>
-        <li><a href="#">Контакты</a></li>
-        <li><a href="#">Карта сайта</a></li>
-      </ul>
-    </div>
-  </div>
-  <p class="footer-rights">© 2011–2016 «ЗЕФИР Ковровая Коллекция»</p>
-  <div class="footer-count"><a href="#"><img src="i/parts/icon_rating.png" alt=""></a></div>
-</footer>
-<div class="callback">
-  <div class="callback-call"><a href="#"><span>Обратный звонок</span></a></div>
-  <div class="callback-question"><a href="#"><span>Задать вопрос</span></a></div>
-</div>
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="js/main.js"></script>

@@ -10,6 +10,86 @@
   </head>
 </html>
 <body>
+  <div id="modal-question" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close"></div>
+      <div class="modal__header">Задать вопрос</div>
+      <form name="mail_adminForm" method="post" action="/netcat/add.php" onsubmit="_gaq.push(['_trackEvent', 'Форма Отправка письма', 'Отправили данные по форме']);" novalidate="novalidate" class="feedback-form">
+        <input name="cc" type="hidden" value="196">
+        <input name="sub" type="hidden" value="167">
+        <input name="catalogue" type="hidden" value="1">
+        <input type="hidden" name="posting" value="1">
+        <input id="f_Subject" name="f_QSubject" type="hidden" value="Сервисы">
+        <div class="feedback-form__group">
+          <label for="f_QName">Представьтесь, пожалуйста <span>*</span></label>
+          <input type="text" name="f_QName" id="f_QName">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_QPhone">Контактный телефон <span>*</span></label>
+          <input type="text" name="f_QPhone" id="f_QPhone">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_QEmail">E-mail <span>*</span></label>
+          <input type="text" name="f_QEmail" id="f_QEmail">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_QText">Ваш вопрос</label>
+          <textarea id="f_QText" name="f_QText"></textarea>
+        </div>
+        <div class="feedback-form__group">
+          <label for="nc_captcha_code_q">Введите символы <span>*</span></label>
+          <div>
+            <input type="hidden" name="nc_captcha_hash" value=""><img name="nc_captcha_img" src="i/parts/bg_prot.jpg">
+            <input id="nc_captcha_code_q" type="text" name="nc_captcha_code_q" size="10">
+          </div>
+        </div>
+        <div class="feedback__notify"><span>*</span> поля являются обязательными для заполнения</div>
+        <button type="submit" class="feedback__submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+  <div id="modal-call" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close"></div>
+      <div class="modal__header">Обратный звонок</div>
+      <form name="mail_adminForm" method="post" action="/netcat/add.php" onsubmit="_gaq.push(['_trackEvent', 'Форма Отправка письма', 'Отправили данные по форме']);" novalidate="novalidate" class="feedback-form">
+        <input name="cc" type="hidden" value="196">
+        <input name="sub" type="hidden" value="167">
+        <input name="catalogue" type="hidden" value="1">
+        <input type="hidden" name="posting" value="1">
+        <input id="f_CallSubject" name="f_CallSubject" type="hidden" value="Сервисы">
+        <div class="feedback-form__group">
+          <label for="f_CallName">Представьтесь, пожалуйста <span>*</span></label>
+          <input type="text" name="f_CallName" id="f_CallName">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallPhone">Контактный телефон <span>*</span></label>
+          <input type="text" name="f_CallPhone" id="f_CallPhone">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallTime">удобное время для звонка</label>
+          <input type="text" name="f_CallTime" id="f_CallTime">
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallText">Ваш вопрос</label>
+          <textarea id="f_CallText" name="f_CallText"></textarea>
+        </div>
+        <div class="feedback-form__group">
+          <label for="f_CallComment">комментарий</label>
+          <textarea id="f_CallComment" name="f_CallComment"></textarea>
+        </div>
+        <div class="feedback-form__group">
+          <label for="nc_captcha_code_call">Введите символы <span>*</span></label>
+          <div>
+            <input type="hidden" name="nc_captcha_hash" value=""><img name="nc_captcha_img" src="i/parts/bg_prot.jpg">
+            <input id="nc_captcha_code_call" type="text" name="nc_captcha_code_call" size="10" class="captcha-input">
+          </div>
+        </div>
+        <div class="feedback__notify"><span>*</span> поля являются обязательными для заполнения</div>
+        <button type="submit" class="feedback__submit">Перезвоните мне</button>
+      </form>
+    </div>
+  </div>
   <div id="nav">
   <ul>
   <li><a href="./">главная</a></li>
@@ -23,6 +103,7 @@
   <li><a href="./search.html">поиск</a></li>
   <li><a href="./services.html">услуги</a></li>
   <li><a href="./shops.html">шоу-румы</a></li>
+  <li><a href="./review.html">превью</a></li>
   </ul>
   </div>
   <header class="line">
@@ -444,8 +525,8 @@
     <div class="footer-count"><a href="#"><img src="i/parts/icon_rating.png" alt=""></a></div>
   </footer>
   <div class="callback">
-    <div class="callback-call"><a href="#"><span>Обратный звонок</span></a></div>
-    <div class="callback-question"><a href="#"><span>Задать вопрос</span></a></div>
+    <div class="callback-call"><a href="#modal-call" data-modal="call"><span>Обратный звонок</span></a></div>
+    <div class="callback-question"><a href="#modal-question" data-modal="question"><span>Задать вопрос</span></a></div>
   </div>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="js/main.js"></script>
