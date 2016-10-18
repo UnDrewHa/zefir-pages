@@ -276,7 +276,7 @@
       <p class="breadcrumbs"><a href="#">Дизайнерские ковры ручной работы</a></p>
       <h1 itemprop="name" class="product-title">Ваш заказ</h1>
       <p class="product-subtitle">Ковер "Danielle orchid"</p>
-      <form id="orderForm" name="orderForm" enctype="multipart/form-data" method="post" action="/netcat/add.php" novalidate="novalidate">
+      <form id="orderForm" name="orderForm" enctype="multipart/form-data" method="get" action="/netcat/add.php" novalidate="novalidate">
         <div id="nc_moderate_form">
           <input name="admin_mode" type="hidden" value="">
           <input name="catalogue" type="hidden" value="1">
@@ -430,4 +430,14 @@
   </div>
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.querySelector("#f_Per_w").oninput = function() {
+      document.querySelector("#razmer").selectedIndex = 0;
+      document.querySelector(".customSelectInner").innerHTML = "";
+    };
+    document.querySelector("#f_Per_h").oninput = function() {
+      document.querySelector("#razmer").selectedIndex = 0;
+      document.querySelector(".customSelectInner").innerHTML = "";
+    };
+  </script>
 </body>
