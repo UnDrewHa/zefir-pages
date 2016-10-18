@@ -89,8 +89,7 @@
         <button type="submit" class="feedback__submit">Перезвоните мне</button>
       </form>
     </div>
-  </div>
-  <div id="nav">
+  </div><div id="nav">
   <ul>
   <li><a href="./">главная</a></li>
   <li><a href="./club.html">клуб</a></li>
@@ -139,7 +138,7 @@
       <div class="addition-info"><a href="#" class="addition-info__down">скачать электронный каталог</a><a href="#" class="addition-info__club">Вступить в дизайн-клуб</a></div>
       <nav>
         <ul class="main-nav">
-          <li class="main-nav__item"><a href="#">Дизайнерские ковры</a></li>
+          <li class="main-nav__item active"><a href="#">Дизайнерские ковры</a></li>
           <li class="main-nav__item"><a href="#">Ковровые покрытия</a></li>
           <li class="main-nav__item"><a href="#">есть в наличии</a></li>
           <li class="main-nav__item"><a href="#">Шоу-рум</a></li>
@@ -266,28 +265,92 @@
       </nav>
     </div>
   </header>
-  <main class="main-content">
-    <header class="page-header">
-      <p class="breadcrumbs"><a href="#">Главная</a></p>
-      <h1 class="page-title">10 лучших современных ковров десятилетия по версии журнала «Cover»</h1>
-      <div class="preview-desc">
-        <p><i>Люси Апвард - автор Британского журнала «Cover» - одного из самых уважаемых в мире изданий в отрасли мягкого пола, задал вопрос десяти различным международным компаниям, торгующим коврами. И этот вопрос звучал так: «Какой из ваших ковров стал лучшим ковром десятилетия?» Некоторые ковры стали хитом продаж в той или иной компании, другие положили начало важному тренду или послужили определенной вехой в развитии ковровой индустрии в последние десять лет. Итак, перед вами – окончательная подборка. Мы указали название ковра, имя человека, выбравшего тот или иной ковер, и процитировали несколько слов в обоснование такого выбора. Можно по-разному относиться к подобным подборкам, но следует помнить, что именно эти ковры олицетворяют сущность рынка, на котором мы работаем.</i></p>
-        <p class="preview-desc__title"><a href="#">№01. Ковер коллекции «Soho», дизайн и исполнение - компания «Wool and Silk Rugs»</a></p>
-        <p><i>Комментарий Резы Аштари, Ashtari Carpets</i></p>
-        <p>«Этот ковер, создан величайшим дизайнером современности Эрбилем Тезканом, основателем компании «Wool and Silk Rugs». Эрбиль Тезкан создает сотканные вручную ковры великолепного качества, с отделкой на высшем уровне. Его ковры обращаются к воображению и помогают создать атмосферу безмятежности. Это элегантность вне времени, которая сочетается с классическими и современными стилями в интерьере».</p><img src="i/parts/preview_1.jpg" alt="">
-        <p class="preview-desc__title"><a href="#">№02. Ковер коллекции «Caprice», дизайн и исполнение - компания «Amici Imports»</a></p>
-        <p><i>Комментарий Майкла Пурвакил, Weavers Art</i></p>
-        <p>«Это прекрасный пример ковра, который задал направление в дизайне в прошедшем десятилетии. Дело в том, что Caprice сочетается буквально со всем. Изысканный мотив такого дизайна популярен во все времена, а выбор цветов – роскошный, но неброский».</p><img src="i/parts/preview_2.jpg" alt="">
-        <div class="sharing-list">
-          <li class="fb"><a href="#"></a></li>
-          <li class="vk"><a href="#"></a></li>
-          <li class="tw"><a href="#"></a></li>
-          <li class="hz"><a href="#"></a></li>
-        </div>
+  <div class="product-box">
+    <aside class="product-image">
+      <div class="product-image__wrap"><img src="i/parts/carpet1.jpg" alt=""></div>
+      <div class="order-warning"><span>Внимание</span>
+        <p>Обратите, пожалуйста, внимание, что при расчете объема необходимо добавить припуск, количество которого рассчитывается в зависимости от рисунка покрытия, ширины рулона и формы Ваших помещений. Точный расчет Вам помогут сделать <a href='#'>наши менеджеры</a>.</p>
       </div>
-    </header>
-  </main>
-  <footer>
+      <div class="order-note"><span>Примечание</span>
+        <p>Для обеспечения гарантии необходима профессиональная установка Вашего покрытия сертифицированными специа- листами. Также, не забудьте, пожалуйста, приобрести подложку и расходные материалы для качественной установки.</p>
+      </div>
+    </aside>
+    <main class="product-desc">
+      <p class="breadcrumbs"><a href="#">Дизайнерские ковры ручной работы</a></p>
+      <h1 itemprop="name" class="product-title">Ваш заказ</h1>
+      <p class="product-subtitle">Ковровое покрытие "Aquinnah"</p>
+      <form id="orderForm" name="orderForm" enctype="multipart/form-data" method="post" action="/netcat/add.php" novalidate="novalidate">
+        <div id="nc_moderate_form">
+          <input name="admin_mode" type="hidden" value="">
+          <input name="catalogue" type="hidden" value="1">
+          <input name="cc" type="hidden" value="104">
+          <input name="sub" type="hidden" value="84">
+          <input name="posting" type="hidden" value="1">
+          <input name="curPos" type="hidden" value="0">
+        </div>
+        <input name="f_Parent_Message_ID" type="hidden" value="0">
+        <input type="hidden" value="817" size="12" maxlength="12" name="f_Goods_ID">
+        <input type="hidden" value="" size="12" maxlength="12" name="Goods_ID">
+        <input name="f_Color_ID" type="hidden" value="0">
+        <input id="TypeZakaz" name="f_TypeZakaz" type="hidden" value="0">
+        <input name="f_Surname" type="hidden" value="0">
+        <input id="Prise" name="Prise" type="hidden" value="1800">
+        <div class="order">
+          <p class="order__color">Цвет: <b>134 Shore Line</b> <a href='#'>изменить</a></p>
+          <p class="order__price-info">Цена за м<sup>2</sup>: <b>185 у.е.</b></p>
+          <p class="order__image"><img src="i/parts/order_carpet.jpg" alt=""></p>
+          <div class="order-square">
+            <label for="f_Count">Желаемая примерная площадь</label>
+            <input type="text" name="f_Count" id="f_Count"><span>м<sup>2</sup></span><span class="order__recalc base-btn">Пересчитать</span>
+          </div>
+          <p class="order__price">Стоимость Вашего покрытия: <span id='SUMM'>11 904</span> у.е. <span class='rubls'>(825 646 руб.)</span></p>
+          <p class="order__info"><span>*</span> 1 у.е. = 1 Евро по курсу ЦБ РФ на день покупки, цена в рублях указана без НДС </p>
+          <div class="order-contacts">
+            <h2>Ваши контактные данные для предварительного заказа:</h2>
+            <div class="feedback-form">
+              <input name="cc" type="hidden" value="196">
+              <input name="sub" type="hidden" value="167">
+              <input name="catalogue" type="hidden" value="1">
+              <input type="hidden" name="posting" value="1">
+              <input id="f_Subject" name="f_Subject" type="hidden" value="Сервисы">
+              <div class="feedback-form__group">
+                <label for="f_Name">Ваши ФИО <span>*</span></label>
+                <input type="text" name="f_Name" id="f_Name">
+              </div>
+              <div class="feedback-form__group">
+                <label for="f_Email">Ваш E-mail <span>*</span></label>
+                <input type="text" name="f_Email" id="f_Email">
+              </div>
+              <div class="feedback-form__group">
+                <label for="f_Phone">Ваш телефон <span>*</span></label>
+                <input type="text" name="f_Phone" id="f_Phone">
+              </div>
+              <div class="feedback-form__group">
+                <label for="f_Comment">Комментарии</label>
+                <textarea id="f_Comment" name="f_Comment"></textarea>
+              </div>
+              <div class="feedback-form__group">
+                <label for="nc_captcha_code">Введите символы <span>*</span></label>
+                <div>
+                  <input type="hidden" name="nc_captcha_hash" value=""><img name="nc_captcha_img" src="i/parts/bg_prot.jpg">
+                  <input id="nc_captcha_code" type="text" name="nc_captcha_code" size="10" class="captcha-input">
+                </div>
+              </div>
+              <div class="feedback__notify"><span>*</span> поля являются обязательными для заполнения</div>
+              <button type="submit" class="feedback__submit">Отправить заказ</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </div>
+  <div data-parallax="scroll" data-image-src="i/bg_parallax.jpg" class="parralax-block">
+    <p><a href="#">
+        <i>Новые</i><br>
+        тенденции<br>
+        2016-2017</a></p>
+  </div>
+  <footer class="zero-margin">
     <div class="footer-wrap">
       <div class="footer-item">
         <p class="footer-item__title">Поддержка клиентов:</p>
@@ -355,6 +418,6 @@
     <div class="callback-call"><a href="#modal-call" data-modal="call"><span>Обратный звонок</span></a></div>
     <div class="callback-question"><a href="#modal-question" data-modal="question"><span>Задать вопрос</span></a></div>
   </div>
-  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="js/main.js"></script>
 </body>
