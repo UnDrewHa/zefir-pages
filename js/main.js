@@ -737,6 +737,13 @@
     });
   });
 
+  body.on("click", ".modal", function(e) {
+    if (e.target.className !== "modal shown") {
+      return;
+    }
+    $(this).find(".modal__close").trigger("click");
+  });
+
   /* Слайдеры */
   $('[slick-slider]').each(function () {
     var self = $(this), slickConfig = $.parseJSON(self.attr('slick-data'));
