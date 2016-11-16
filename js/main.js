@@ -751,8 +751,8 @@ CUSTOM SELECT
       "margin-right": scrollBarWidth + "px"
     });
     modalTarget.addClass("shown");
-    
-  }); 
+
+  });
   body.on("click", ".modal__close", function() {
     $(this).closest(".modal").removeClass("shown");
     body.css({
@@ -783,7 +783,10 @@ CUSTOM SELECT
     })
   }
 
-  body.on('mouseenter', ".main-nav__item", function (e) {
+  body.on('mouseenter', ".main-nav__item", showFlyDown);
+
+  body.on('mouseleave', "nav", hideFlyDown);
+  function showFlyDown(e) {
     var target = $(this);
 
     if (timer) {
@@ -795,15 +798,13 @@ CUSTOM SELECT
       clearTimeout(timer);
       timer = null;
     }, 300);
-  });
-
-  body.on('mouseleave', "nav", function (e) {
-    console.log(e.relatedTarget);
+  }
+  function hideFlyDown(e, force) {
     if (timer) {
       clearTimeout(timer);
       timer = null;
     }
-    if ($(".flydown").is(":visible") && ($(e.relatedTarget)[0].className != 'flydown')) {
+    if ($(".flydown").is(":visible") && force) {
         $(".flydown").fadeOut(300);
         $(".main-nav__item").removeClass("selected");
         if ($('.top-slider').length) {
@@ -812,13 +813,26 @@ CUSTOM SELECT
         clearTimeout(timer);
         timer = null;
     }
-  });
-
+    else if ($(".flydown").is(":visible") && ($(e.relatedTarget)[0].className != 'flydown')) {
+        $(".flydown").fadeOut(300);
+        $(".main-nav__item").removeClass("selected");
+        if ($('.top-slider').length) {
+          $('.top-slider img').css('opacity', '1');
+        }
+        clearTimeout(timer);
+        timer = null;
+    }
+  }
   function flydown(target) {
     $(".main-nav__item").removeClass("selected");
     target.addClass("selected");
 
     var index = $(".main-nav__item.selected").index();
+    var numOfElems = $(".flydown-item").length - 1;
+    if ( index > numOfElems ) {
+      hideFlyDown(null, true);
+      return false;
+    }
     var childNum = index + 1;
 
     var leftVal = -1 * 100 * index;
@@ -837,8 +851,8 @@ CUSTOM SELECT
     }
     $(".flydown").fadeIn(300);
   }
-  
-  
+
+
 
   if ($('.product-colors__slider').hasClass('-slick')) {
     $('.product-colors__slider').slick({
@@ -885,6 +899,6 @@ CUSTOM SELECT
     });
   }
 
-  
+
 
 })(jQuery);
