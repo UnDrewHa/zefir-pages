@@ -786,6 +786,7 @@ CUSTOM SELECT
   body.on('mouseenter', ".main-nav__item", showFlyDown);
 
   body.on('mouseleave', "nav", hideFlyDown);
+
   function showFlyDown(e) {
     var target = $(this);
 
@@ -827,15 +828,13 @@ CUSTOM SELECT
     $(".main-nav__item").removeClass("selected");
     target.addClass("selected");
 
-    var index = $(".main-nav__item.selected").index();
-    var numOfElems = $(".flydown-item").length - 1;
-    if ( index > numOfElems ) {
+    var index = $(".main-nav__item.selected").data().id;
+    if ( !$(".flydown-item[data-id='" + index + "']").length ) {
       hideFlyDown(null, true);
       return false;
     }
-    var childNum = index + 1;
 
-    var leftVal = -1 * 100 * index;
+    var leftVal = -1 * 100 * (index - 1);
     var left = leftVal + "%";
 
     $(".flydown-container").stop().css({

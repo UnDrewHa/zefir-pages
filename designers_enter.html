@@ -107,6 +107,7 @@
   <li><a href="./review.html">обзор</a></li>
   <li><a href="./product_order.html">заказ ковра</a></li>
   <li><a href="./product_order2.html">заказ покрытия</a></li>
+  <li><a href="./designers_enter.html">вход для профессионалов</a></li>
   </ul>
   </div>
   <header class="line">
@@ -140,11 +141,11 @@
       <div class="addition-info"><a href="#" class="addition-info__down">скачать электронный каталог</a><a href="#" class="addition-info__club">Вступить в дизайн-клуб </a><a href="#" class="addition-info__designers">Вход для дизайнеров </a></div>
       <nav>
         <ul class="main-nav">
-          <li class="main-nav__item"><a href="#">Дизайнерские ковры</a></li>
-          <li class="main-nav__item"><a href="#">Ковровые покрытия</a></li>
+          <li data-id="1" class="main-nav__item"><a href="#">Сервисы</a></li>
+          <li data-id="2" class="main-nav__item"><a href="#">Дизайнерские ковры</a></li>
+          <li data-id="3" class="main-nav__item"><a href="#">Ковровые покрытия</a></li>
           <li class="main-nav__item"><a href="#">портфолио</a></li>
           <li class="main-nav__item"><a href="#">Шоу-рум</a></li>
-          <li class="main-nav__item"><a href="#">Сервисы</a></li>
         </ul>
         <form class="search-block">
           <input type="text" class="search-block__input">
@@ -152,7 +153,18 @@
         </form>
         <div class="flydown">
           <div class="flydown-container">
-            <div class="flydown-item">
+            <div data-id="1" class="flydown-item">
+              <ul class="flydown-nav">
+                <li class="flydown-nav__item line-bottom"><a href="#">Консультации</a></li>
+                <li class="flydown-nav__item"><a href="#">Специальный заказ</a></li>
+                <li class="flydown-nav__item line-bottom"><a href="#">Профессиональная установка</a></li>
+                <li class="flydown-nav__item"><a href="#">Выезд специалиста</a></li>
+                <li class="flydown-nav__item"><a href="#">Примерка ковров</a></li>
+                <li class="flydown-nav__item"><a href="#">Доставка</a></li>
+              </ul>
+              <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
+            </div>
+            <div data-id="2" class="flydown-item">
               <ul class="flydown-nav">
                 <li class="flydown-nav__item line-bottom"><a href="#">Ожидаемые новые коллекции 2017</a></li>
                 <li class="flydown-nav__item"><a href="#">Авторские ковры ручной работы</a>
@@ -216,7 +228,7 @@
               </ul>
               <div class="flydown-item__image"><a href="#"><img src="i/parts/flydown_img.jpg" alt=""></a></div>
             </div>
-            <div class="flydown-item">
+            <div data-id="3" class="flydown-item">
               <ul class="flydown-nav">
                 <li class="flydown-nav__item line-bottom"><a href="#">Ковровые покрытия для дома</a>
                   <ul class="flydown-secNav">
@@ -257,11 +269,9 @@
       <h1 class="page-title">Изготовление ковров по индивидуальному проекту</h1>
     </header>
     <div class="content">
-      <p>
-        Это пространство проектов ЗЕФИР открыто только для профессионалов.<br>
-        Введите, пожалуйста, логин и пароль для входа<br>
-        Для получения логина и пароля свяжитесь, пожалуйста, с <a href='#'>менеджером</a> или <a href='club.html'>заполните анкету</a>, мы вам перезвоним!<br>Спасибо!
-      </p>
+      <p>Это пространство проектов ЗЕФИР открыто только для профессионалов.</p>
+      <p>Введите, пожалуйста, логин и пароль для входа</p>
+      <p>Для получения логина и пароля свяжитесь, пожалуйста, с <a href='#'>менеджером</a> или <a href='club.html'>заполните анкету</a>, мы вам перезвоним!<br>Спасибо!</p>
     </div>
     <form name="adminForm" id="adminForm" enctype="multipart/form-data" method="post" action="/netcat/add.php" class="club-form">
       <div id="nc_moderate_form">
