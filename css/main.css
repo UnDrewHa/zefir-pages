@@ -4280,3 +4280,43 @@ footer.zero-margin {
         right: 20px
     }
 }
+
+.flydown-nav__item:first-of-type {
+    padding-top: 36px; удалить вообще
+}
+
+.flydown-nav__item:first-of-type a {
+    margin-top: 25px;
+}
+
+.flydown-nav__item.line-bottom > a {
+    margin-bottom: 11px;
+}
+
+.flydown-nav__item {
+    padding: 0 40px;
+}
+
+.flydown-nav__item a {
+    padding: 11px 0;
+}
+
+.flydown-nav__item a::before {
+    top: 10px;
+}
+
+.footer-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+
+.no-shrink {
+  -ms-flex-negative: 0;
+        flex-shrink: 0;
+}
