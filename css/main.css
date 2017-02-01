@@ -4282,7 +4282,7 @@ footer.zero-margin {
 }
 
 .flydown-nav__item:first-of-type {
-    padding-top: 36px; удалить вообще
+    padding-top: 0;
 }
 
 .flydown-nav__item:first-of-type a {
